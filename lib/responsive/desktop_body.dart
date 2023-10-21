@@ -16,22 +16,24 @@ class MyDesktopBody extends StatelessWidget {
           children: [
             // First column
             Expanded(
-              child: Column(
-                children: [
-                  // youtube video
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: AspectRatio(
-                      aspectRatio: 16 / 9,
-                      child: Container(
-                        color: Colors.deepPurple[400],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // youtube video
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: AspectRatio(
+                        aspectRatio: 16 / 9,
+                        child: Container(
+                          color: Colors.deepPurple[400],
+                        ),
                       ),
                     ),
-                  ),
 
-                  // comment section & recommended videos
-                  Expanded(
-                    child: ListView.builder(
+                    // comment section & recommended videos
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
                       itemCount: 8,
                       itemBuilder: (context, index) {
                         return Padding(
@@ -43,8 +45,8 @@ class MyDesktopBody extends StatelessWidget {
                         );
                       },
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
 
