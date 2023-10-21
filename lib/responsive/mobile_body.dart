@@ -8,39 +8,41 @@ class MyMobileBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
-        title: Text('M O B I L E'),
+        title: const Text('M O B I L E'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            // youtube video
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: Container(
-                  color: Colors.deepPurple[400],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // youtube video
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Container(
+                    color: Colors.deepPurple[400],
+                  ),
                 ),
               ),
-            ),
 
-            // comment section & recommended videos
-            Expanded(
-              child: ListView.builder(
-                itemCount: 8,
+              // comment section & recommended videos
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 20, // Set the desired number of items
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       color: Colors.deepPurple[300],
-                      height: 120,
+                      height: 100,
                     ),
                   );
                 },
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

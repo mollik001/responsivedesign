@@ -8,7 +8,7 @@ class MyDesktopBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: AppBar(
-        title: Text('D E S K T O P'),
+        title: const Text('D E S K T O P'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -23,7 +23,7 @@ class MyDesktopBody extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: AspectRatio(
-                        aspectRatio: 16 / 9,
+                        aspectRatio: 20 / 9,
                         child: Container(
                           color: Colors.deepPurple[400],
                         ),
@@ -33,7 +33,7 @@ class MyDesktopBody extends StatelessWidget {
                     // comment section & recommended videos
                     ListView.builder(
                       shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: 8,
                       itemBuilder: (context, index) {
                         return Padding(
